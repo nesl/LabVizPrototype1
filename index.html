@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/graph.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/legend.css">
+    <link rel="stylesheet" href="css/stylesheet.css">    
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <a class="brand" href="#">NESL Xively Feed Viewer</a>
+          <ul class="nav">
+            <!-- 
+            <li class="active"><a href="#">Dakar</a></li>
+            -->
+          </ul>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="jumbotron">
+          <h1>Feeds from NESL, at your fingertips!</h1>
+          <p class="lead">Adapted by Aamoy</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6 offset3 pagination-centered">
+          <form action="#" class="form-inline">
+            <input id="key" type="text" placeholder="API Key">
+            <input id="feed" type="text" placeholder="Feed Id">
+            <button id="new-feed" class="btn btn-primary"><i class="icon-plus icon-white"></i></button>
+	    <strong>Punch it.</strong>
+          </form>
+          <div id="new-feed-alert" class="alert hide">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Warning!</strong> Best check yo self, you're not looking too good.
+          </div>
+          <button class="btn btn-link sample-data" data-key='IHFO5YRkTEcVCRbVc4yEwDDDgoBjolkNaJBjgvEopqo5x9IC' data-feed='118083'>Door Sensor</button>
+          <button class="btn btn-link sample-data" data-key='V2fqbNb9Pc2uXYz9rogs5wOUyNh6j0F7xuqJNwoky5NOaKoO' data-feed='128337'>Light Sensor</button>
+          <button class="btn btn-link sample-data" data-key='qosKyJKXo16AV8lbKOnZxRfeHQFhRRSSgNfVfoVvGYnGfbsL' data-feed='118086'>Temp Sensor</button>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="span9 offset1">
+          <div id="chart"></div>
+        </div>
+        <div class="span2">
+          <div id="graph"></div>
+        </div>
+      </div>
+      
+      <div id="graph-container">
+        <div class="row graph-row hide" id="graph-sample">
+          <hr>
+          <button type="button" class="close pull-right" data-dismiss="alert">&times;</button>
+          <div class="span9 offset1">
+            <h3 class="title"></h3>
+            <div class="loader"></div>
+            <div class="chart-container"></div>
+            <p class="description"></p>
+          </div>
+          <div class="span2">
+            <div class="legend-container"></div>
+          </div>
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="footer">
+        <small>
+          Made by <a href="aamoyg@linux.ucla.edu">Aamoy Gupta</a> - &copy; 2013 - Source code under the MIT License</a><br/>
+          Based on an original idea by <a href="http://twitter.com/sarfata">@sarfata</a>. Built in a few hours thanks to <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a href="http://momentjs.com/">Moment.js</a> and the <a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a> graph library.
+        </small>
+      </div>
+      
+    </div>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="js/moment.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/xivelyjs-1.0.4.min.js"></script>
+  	<script src="js/d3.v2.js"></script>
+  	<script src="js/rickshaw.min.js"></script>
+    	 //<script src="http://code.highcharts.com/stock/highstock.js"></script>
+    	<script src="js/xively-viewer.js"></script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-15404974-1']);
+      _gaq.push(['_setSiteSpeedSampleRate', 100]);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
